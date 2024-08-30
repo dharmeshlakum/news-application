@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react'
 import NewsItem from './NewsItem';
+import Spinner from './Spinner';
 
 export default class News extends Component {
     constructor() {
@@ -14,37 +15,41 @@ export default class News extends Component {
     }
 
     async componentDidMount() {
+        this.setState({ loading: true })
         const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
         this.setState({
             articles: parsedData.articles,
-            totleArticles: parsedData.totalResults
+            totleArticles: parsedData.totalResults,
+            loading: false
         });
 
     }
 
     handleNextNews = async () => {
+        this.setState({ loading: true })
         const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber + 1}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
         this.setState({
             articles: parsedData.articles,
-            pageNumber: this.state.pageNumber + 1
+            pageNumber: this.state.pageNumber + 1,
+            loading: false
         });
-        console.log(this.state.pageNumber)
     }
 
     handlePrevNews = async () => {
+        this.setState({ loading: true })
         const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber - 1}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
-       
+
         this.setState({
             articles: parsedData.articles,
-            pageNumber: this.state.pageNumber - 1
+            pageNumber: this.state.pageNumber - 1,
+            loading: false
         });
-        console.log(this.state.pageNumber)
     }
 
     render() {
@@ -57,10 +62,12 @@ export default class News extends Component {
                         className={`fs-4 text-decoration-underline text-center text-${mode === "light" ? "danger" : "light"}`}>
                         Tranding News
                     </h1>
+                    {/* add spinner if the data is loading */}
+                    {this.state.loading && <Spinner />}
                     {/* Create news iteam for each articles */}
                     <div className="row">
-                        {this.state.articles.map((element) => {
-                            return <div className="col-md-3 my-2" key={element.url}>
+                        {!this.state.loading && this.state.articles.map((element) => {
+                            return <div className="col-md-4 my-2" key={element.url}>
                                 <NewsItem
                                     urlToImage={element.urlToImage}
                                     title={element.title}
