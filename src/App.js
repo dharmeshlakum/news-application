@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './components/Navbar'
+import News from './components/News';
 
 export default class App extends Component {
   constructor() {
@@ -25,12 +26,21 @@ export default class App extends Component {
   }
 
   render() {
+    const apiKey = process.env.REACT_APP_API_KEY;
     return (
       <>
+        {/* navbar component */}
         <Navbar
           heading={"News Daily"}
           mode={this.state.mode}
           handleDarkMode={this.handleDarkMode} />
+
+        {/* news components */}
+        <News
+          mode={this.state.mode}
+          apiKey={apiKey}
+          pageSize={5}
+        />
       </>
     )
   }
