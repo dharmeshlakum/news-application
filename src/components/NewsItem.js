@@ -6,7 +6,7 @@ export default class NewsItem extends Component {
         return (
             <>
                 <div className="card" style={{
-                    height: "420px",
+                    height: "max-content",
                     backgroundColor: mode === "light" ? "#ffffff" : "#36454f",
                     color: mode !== "light" ? "#ffffff" : "#36454f",
                 }}>

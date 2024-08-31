@@ -73,8 +73,8 @@ export default class News extends Component {
             <>
                 <div className={`container text-${mode === "light" ? "dark" : "light"} my-3`}>
                     <h1
-                        className={`fs-4 text-decoration-underline text-center text-${mode === "light" ? "danger" : "light"}`}>
-                        Tranding News
+                        className={`fs-4 my-4 text-decoration-underline text-center text-${mode === "light" ? "danger" : "light"}`}>
+                        Tranding{this.props.category === "general" ? " " : ` ${this.props.category[0].toUpperCase() + this.props.category.slice(1)} `}News
                     </h1>
                     {/* add spinner if the data is loading */}
                     {this.state.loading && <Spinner />}
@@ -89,7 +89,7 @@ export default class News extends Component {
                                     mode={mode}
                                     author={element.author ? element.author : "unknown"}
                                     time={element.publishedAt ? new Date(element.publishedAt).toDateString() : ""}
-                                    publisher={element.source?.name ? element.source?.name :""}
+                                    publisher={element.source?.name ? element.source?.name : ""}
                                     description={element.description}
                                 />
                             </div>
