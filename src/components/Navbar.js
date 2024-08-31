@@ -3,17 +3,22 @@ import { Link } from 'react-router-dom'
 
 export default class Navbar extends Component {
 
+
     render() {
         const { mode, handleDarkMode } = this.props
+        const linkStyle = {
+            color: mode==="light"?"#000000":"#ffffff"
+        }
         return (
             <nav
-                className={`navbar navbar-expand-lg bg-${mode === "light" ? "light" : "dark"} text-${mode === "dark" ? "light" : "dark"}`}>
+                className={`navbar navbar-expand-lg bg-${mode === "light" ? "light" : "dark"}`}>
                 <div className="container-fluid">
-                    <a
-                        className={`navbar-brand text-${mode === "dark" ? "light" : "dark"}`}
-                        href="/">
+                    <Link
+                        className={`navbar-brand`}
+                        style={linkStyle}
+                        to="/">
                         {this.props.heading}
-                    </a>
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button" data-bs-toggle="collapse"
@@ -29,7 +34,8 @@ export default class Navbar extends Component {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/">
                                     Home
@@ -37,7 +43,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/business">
                                     Business
@@ -45,7 +52,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/entertainment">
                                     Entertainment
@@ -53,7 +61,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/general">
                                     General
@@ -61,7 +70,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/health">
                                     Health
@@ -69,7 +79,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/science">
                                     Science
@@ -77,7 +88,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/sports">
                                     Sports
@@ -85,7 +97,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     aria-current="page"
                                     to="/technology">
                                     Technology
@@ -93,7 +106,8 @@ export default class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    className={`nav-link`}
+                                    style={linkStyle}
                                     to="/">
                                     About
                                 </Link>
