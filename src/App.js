@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from './components/Navbar'
 import News from './components/News';
+import { Routes, Route } from "react-router-dom"
 
 export default class App extends Component {
   constructor() {
@@ -34,15 +35,82 @@ export default class App extends Component {
           heading={"News Daily"}
           mode={this.state.mode}
           handleDarkMode={this.handleDarkMode} />
+        <Routes>
 
-        {/* news components */}
-        <News
-          mode={this.state.mode}
-          apiKey={apiKey}
-          pageSize={10}
-          country={"in"}
-          category={"science"}
-        />
+          {/* news components */}
+          <Route path='/' element={
+            <News
+              key={"general"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"general"} />
+          } />
+          <Route path='/business' element={
+            <News
+              key={"business"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"business"} />
+          } />
+          <Route path='/entertainment' element={
+            <News
+              key={"entertainment"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"entertainment"} />
+          } />
+          <Route path='/general' element={
+            <News
+              key={"general"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"general"} />
+          } />
+          <Route path='/health' element={
+            <News
+              key={"health"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"health"} />
+          } />
+          <Route path='/science' element={
+            <News
+              key={"science"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"science"} />
+          } />
+          <Route path='/sports' element={
+            <News
+              key={"science"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"sports"} />
+          } />
+          <Route path='/technology' element={
+            <News
+              key={"technology"}
+              mode={this.state.mode}
+              apiKey={apiKey}
+              pageSize={10}
+              country={"in"}
+              category={"technology"} />
+          } />
+        </Routes>
       </>
     )
   }

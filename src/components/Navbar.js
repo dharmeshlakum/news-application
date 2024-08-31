@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Navbar extends Component {
 
@@ -27,75 +28,75 @@ export default class Navbar extends Component {
                         id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
+                                    to="/">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    business
-                                </a>
+                                    to="/business">
+                                    Business
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    entertainment
-                                </a>
+                                    to="/entertainment">
+                                    Entertainment
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    general
-                                </a>
+                                    to="/general">
+                                    General
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    health
-                                </a>
+                                    to="/health">
+                                    Health
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    science
-                                </a>
+                                    to="/science">
+                                    Science
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    sports
-                                </a>
+                                    to="/sports">
+                                    Sports
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     aria-current="page"
-                                    href="/">
-                                    technology
-                                </a>
+                                    to="/technology">
+                                    Technology
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a
+                                <Link
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
-                                    href="/">
+                                    to="/">
                                     About
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
