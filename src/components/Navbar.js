@@ -7,10 +7,11 @@ export default class Navbar extends Component {
     render() {
         const { mode, handleDarkMode } = this.props
         const linkStyle = {
-            color: mode==="light"?"#000000":"#ffffff"
+            color: mode === "light" ? "#000000" : "#ffffff"
         }
         return (
             <nav
+                style={linkStyle}
                 className={`navbar navbar-expand-lg bg-${mode === "light" ? "light" : "dark"}`}>
                 <div className="container-fluid">
                     <Link

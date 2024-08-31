@@ -4,6 +4,7 @@ import News from './components/News';
 import { Routes, Route } from "react-router-dom"
 
 export default class App extends Component {
+  pageNumber = 10;
   constructor() {
     super();
     this.state = {
@@ -43,7 +44,7 @@ export default class App extends Component {
               key={"general"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"general"} />
           } />
@@ -52,7 +53,7 @@ export default class App extends Component {
               key={"business"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"business"} />
           } />
@@ -61,7 +62,7 @@ export default class App extends Component {
               key={"entertainment"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"entertainment"} />
           } />
@@ -70,7 +71,7 @@ export default class App extends Component {
               key={"general"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"general"} />
           } />
@@ -79,7 +80,7 @@ export default class App extends Component {
               key={"health"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"health"} />
           } />
@@ -88,16 +89,16 @@ export default class App extends Component {
               key={"science"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"science"} />
           } />
           <Route path='/sports' element={
             <News
-              key={"science"}
+              key={"sports"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"sports"} />
           } />
@@ -106,7 +107,7 @@ export default class App extends Component {
               key={"technology"}
               mode={this.state.mode}
               apiKey={apiKey}
-              pageSize={10}
+              pageSize={this.pageNumber}
               country={"in"}
               category={"technology"} />
           } />
