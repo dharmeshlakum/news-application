@@ -87,6 +87,9 @@ export default class News extends Component {
                                     title={element.title}
                                     url={element.url}
                                     mode={mode}
+                                    author={element.author ? element.author : "unknown"}
+                                    time={element.publishedAt ? new Date(element.publishedAt).toDateString() : ""}
+                                    publisher={element.source?.name ? element.source?.name :""}
                                     description={element.description}
                                 />
                             </div>
