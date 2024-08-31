@@ -37,6 +37,62 @@ export default class Navbar extends Component {
                             <li className="nav-item">
                                 <a
                                     className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    business
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    entertainment
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    general
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    health
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    science
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    sports
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
+                                    aria-current="page"
+                                    href="/">
+                                    technology
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a
+                                    className={`nav-link text-${mode === "dark" ? "light" : "dark"}`}
                                     href="/">
                                     About
                                 </a>

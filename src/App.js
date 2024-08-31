@@ -39,7 +39,9 @@ export default class App extends Component {
         <News
           mode={this.state.mode}
           apiKey={apiKey}
-          pageSize={5}
+          pageSize={10}
+          country={"in"}
+          category={"science"}
         />
       </>
     )

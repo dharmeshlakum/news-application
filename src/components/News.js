@@ -2,8 +2,22 @@ import axios from 'axios';
 import React, { Component } from 'react'
 import NewsItem from './NewsItem';
 import Spinner from './Spinner';
+import PropTypes from 'prop-types'
 
 export default class News extends Component {
+
+    static defaultProps = {
+        country: "in",
+        category: "general",
+        pageSize: 5
+    }
+
+    static propTypes = {
+        country: PropTypes.string,
+        category: PropTypes.string,
+        pageSize: PropTypes.number
+    }
+
     constructor() {
         super();
         this.state = {
@@ -16,7 +30,7 @@ export default class News extends Component {
 
     async componentDidMount() {
         this.setState({ loading: true })
-        const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
         this.setState({
@@ -29,7 +43,7 @@ export default class News extends Component {
 
     handleNextNews = async () => {
         this.setState({ loading: true })
-        const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber + 1}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber + 1}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
         this.setState({
@@ -41,7 +55,7 @@ export default class News extends Component {
 
     handlePrevNews = async () => {
         this.setState({ loading: true })
-        const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber - 1}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber - 1}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
 
