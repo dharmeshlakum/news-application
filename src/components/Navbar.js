@@ -42,69 +42,76 @@ export default class Navbar extends Component {
                                     Home
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/business">
-                                    Business
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/entertainment">
-                                    Entertainment
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/general">
-                                    General
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/health">
-                                    Health
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/science">
-                                    Science
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/sports">
-                                    Sports
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    className={`nav-link`}
-                                    style={linkStyle}
-                                    aria-current="page"
-                                    to="/technology">
-                                    Technology
-                                </Link>
-                            </li>
+                            <div className="dropdown">
+                                <button className="btn dropdown-toggle pt-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={linkStyle}>
+                                    Categories
+                                </button>
+                                <ul className="dropdown-menu rounded text-center" style={{ background: mode === "light" ? "#ffffff" : "#000000" }}>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/business">
+                                            Business
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/entertainment">
+                                            Entertainment
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/general">
+                                            General
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/health">
+                                            Health
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/science">
+                                            Science
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/sports">
+                                            Sports
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className={`nav-link`}
+                                            style={linkStyle}
+                                            aria-current="page"
+                                            to="/technology">
+                                            Technology
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                             <li className="nav-item">
                                 <Link
                                     className={`nav-link`}
