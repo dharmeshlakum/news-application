@@ -4,7 +4,7 @@ import News from './components/News';
 import { Routes, Route } from "react-router-dom"
 
 export default class App extends Component {
-  pageNumber = 10;
+  pageNumber = 15;
   constructor() {
     super();
     this.state = {
