@@ -12,7 +12,7 @@ export default class Navbar extends Component {
         return (
             <nav
                 style={linkStyle}
-                className={`navbar navbar-expand-lg bg-${mode === "light" ? "light" : "dark"}`}>
+                className={`navbar fixed-top navbar-expand-lg bg-${mode === "light" ? "light" : "dark"}`}>
                 <div className="container-fluid">
                     <Link
                         className={`navbar-brand`}

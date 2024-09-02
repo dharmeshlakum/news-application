@@ -44,8 +44,6 @@ export default class News extends Component {
 
     async componentDidMount() {
         this.updatedNews();
-
-
     }
 
     fetchMoreNews = () => {
@@ -62,7 +60,7 @@ export default class News extends Component {
             <>
 
                 <h1
-                    className={`fs-4 my-4 text-decoration-underline text-center text-${mode === "light" ? "danger" : "light"}`}>
+                    className={`fs-4 text-decoration-underline text-center text-${mode === "light" ? "danger" : "light"}`} style={{marginTop:"72px"}}>
                     Tranding{this.props.category === "general" ? " " : ` ${this.props.category[0].toUpperCase() + this.props.category.slice(1)} `}News
                 </h1>
                 <InfiniteScroll
