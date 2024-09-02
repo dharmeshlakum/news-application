@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
 import Navbar from './components/Navbar'
 import News from './components/News';
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
+import LoadingBar from 'react-top-loading-bar';
 
 export default class App extends Component {
   pageNumber = 15;
   constructor() {
     super();
     this.state = {
-      mode: "light"
+      mode: "light",
+      progress: 0
     }
+  }
+
+  progressUpdate = (progress) => {
+    this.setState({
+      progress: progress
+    });
   }
 
   handleDarkMode = () => {
@@ -36,11 +44,17 @@ export default class App extends Component {
           heading={"News Daily"}
           mode={this.state.mode}
           handleDarkMode={this.handleDarkMode} />
+        <LoadingBar
+          color='#f10946'
+          height={4}
+          progress={this.state.progress}
+        />
         <Routes>
 
           {/* news components */}
           <Route path='/' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"general"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -49,7 +63,8 @@ export default class App extends Component {
               category={"general"} />
           } />
           <Route path='/business' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"business"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -58,7 +73,8 @@ export default class App extends Component {
               category={"business"} />
           } />
           <Route path='/entertainment' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"entertainment"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -67,7 +83,8 @@ export default class App extends Component {
               category={"entertainment"} />
           } />
           <Route path='/general' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"general"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -76,7 +93,8 @@ export default class App extends Component {
               category={"general"} />
           } />
           <Route path='/health' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"health"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -85,7 +103,8 @@ export default class App extends Component {
               category={"health"} />
           } />
           <Route path='/science' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"science"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -94,7 +113,8 @@ export default class App extends Component {
               category={"science"} />
           } />
           <Route path='/sports' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"sports"}
               mode={this.state.mode}
               apiKey={apiKey}
@@ -103,7 +123,8 @@ export default class App extends Component {
               category={"sports"} />
           } />
           <Route path='/technology' element={
-            <News
+            <News 
+            setProgress={this.progressUpdate}
               key={"technology"}
               mode={this.state.mode}
               apiKey={apiKey}

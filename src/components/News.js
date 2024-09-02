@@ -31,6 +31,7 @@ export default class News extends Component {
 
     async updatedNews() {
         document.title = `News Daily - ${this.props.category}`
+        this.props.setProgress(10)
         const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.pageNumber}`;
         const articleData = await axios.get(url);
         const parsedData = await articleData.data;
@@ -38,10 +39,13 @@ export default class News extends Component {
             articles: this.state.articles.concat(parsedData.articles),
             totleArticles: parsedData.totalResults,
         });
+        this.props.setProgress(100)
     }
 
     async componentDidMount() {
-        this.updatedNews()
+        this.updatedNews();
+
+
     }
 
     fetchMoreNews = () => {
